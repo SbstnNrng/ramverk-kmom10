@@ -1,7 +1,16 @@
 {
-    "name" : "anax/noname",
-    "description": "A me page for the ramverk1 course.",
+    "name" : "seno19/kmom10",
+    "type": "library",
+    "description": "Projekt",
+    "keywords": ["kmom10"],
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Sebastian Noring",
+            "email": "seno19@student.bth.se",
+            "role": "Developer"
+        }
+    ],
     "minimum-stability": "beta",
     "prefer-stable": true,
     "autoload": {
@@ -11,11 +20,17 @@
         }
     },
     "require": {
+        "php": ">=7.3",
         "anax/anax-ramverk1-me": "^1.0.0",
         "anax/htmlform": "^2.0",
-        "anax/database-active-record": "^2.0"
+        "anax/database-active-record": "^2.0",
+        "anax/commons": "^2.0.14",
+        "anax/anax-cli": "^1.2"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7"
+        "anax/anax-ramverk1-me": "^1.0.0",
+        "phpmetrics/phpmetrics": "^2",
+        "phpunit/phpunit": "^7",
+        "anax/anax": "^2.0.17"
     }
 }
