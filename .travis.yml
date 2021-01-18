@@ -1,0 +1,28 @@
+language: php
+
+php:
+   - "7.3"
+   - "7.4"
+   - hhvm
+   - nightly
+
+matrix:
+    allow_failures:
+        - php: nightly
+        - php: hhvm
+
+sudo: false
+
+git:
+    submodules: false
+
+env:
+    global:
+        - XDEBUG_MODE=coverage
+
+before_script:
+    - make install check
+
+script:
+    - make test
+
