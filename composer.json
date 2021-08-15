@@ -25,7 +25,8 @@
         "anax/htmlform": "^2.0",
         "anax/database-active-record": "^2.0",
         "anax/commons": "^2.0.14",
-        "anax/anax-cli": "^1.2"
+        "anax/anax-cli": "^1.2",
+        "michelf/php-markdown": "^1.9"
     },
     "require-dev": {
         "anax/anax-ramverk1-me": "^1.0.0",

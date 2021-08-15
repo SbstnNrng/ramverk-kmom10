@@ -2,6 +2,8 @@
 
 namespace Anax\View;
 
+use Michelf\MarkdownExtra;
+
 // Gather incoming variables and use default values if not set
 $topic = isset($topic) ? $topic : null;
 $answers = isset($answers) ? $answers : null;
@@ -27,11 +29,11 @@ $urlToForum = url("forum");
     <p>
         <b>User: </b><?= $op->acronym ?><br>
         <b>Question:</b><br>
-        <?= $op->question ?><br>
+        <?= MarkdownExtra::defaultTransform($op->question); ?>
         <b>Comments:</b><br>
         <?php foreach ($questioncomments as $com) : ?>
             <?php if ($curid == $com->questionid) : ?>
-                <?= $com->acronym ?>: <?= $com->comment ?><br>
+                <?= $com->acronym ?>: <?= MarkdownExtra::defaultTransform($com->comment); ?>
             <?php endif; ?>
         <?php endforeach; ?>
     </p>
@@ -43,11 +45,11 @@ $urlToForum = url("forum");
             border: 2px solid black;
             margin-bottom: 1rem;
             padding: 1rem;">
-        <b>User:</b> <?= $ans->acronym ?><br> <b>Answer:</b><br> <?= $ans->answer ?><br>
+        <b>User:</b> <?= $ans->acronym ?><br> <b>Answer:</b><br> <?= MarkdownExtra::defaultTransform($ans->answer); ?>
         <b>Comments:</b><br>
                 <?php foreach ($answercomments as $com) : ?>
                     <?php if ($ans->id == $com->answerid) : ?>
-                        <?= $com->acronym ?>: <?= $com->comment ?><br>
+                        <?= $com->acronym ?>: <?= MarkdownExtra::defaultTransform($com->comment); ?>
                     <?php endif; ?>
                 <?php endforeach; ?>
         <a href="<?= url("forum/answercomment/{$curid}/{$ans->id}"); ?>">Comment</a><br>
